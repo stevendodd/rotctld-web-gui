@@ -5,7 +5,7 @@
 
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{ url_for('static', filename='js/socket.io-1.4.5.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
     <script type="text/javascript" charset="utf-8">
 
         var updateSetpoint;
@@ -82,6 +82,16 @@
                 <div id="setpoint"><h3>Setpoint:</h3></div>
             </div>
         </div>
+
+        <div class="row">
+            <div class='col-xs-2'>
+                <button type="button" class="btn btn-primary btn-lg" id="az_minus30" onclick="updateSetpoint('azimuth', -30)">AZ -30</button>
+            </div>
+            <div class='col-xs-2'>
+                <button type="button" class="btn btn-primary btn-lg" id="az_plu30" onclick="updateSetpoint('azimuth', 30)">AZ +30</button>
+            </div>
+        </div>
+<!--
         <div class="row">
             <div class='col-xs-2'>
                 <button type="button" class="btn btn-primary btn-lg" id="az_minus10" onclick="updateSetpoint('azimuth', -10)">AZ -10</button>
@@ -126,7 +136,7 @@
             <div class='col-xs-2'>
                 <button type="button" class="btn btn-primary btn-lg" id="el_plus1" onclick="updateSetpoint('elevation', 1)">EL +1</button>
             </div>
-        </div>
+        </div> -->
         <br>
         <div class="row">
             <div class='col-xs-6'>

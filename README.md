@@ -9,7 +9,7 @@ It is in no way polished, and likely has some interesting bugs (particulatly if 
 
 ## Dependencies
 * Python (2.7, until I fix things)
-* Python Modules: flask, flask-socketio  (can obtain using pip)
+* Python Modules: flask, flask-socketio, simple-websocket  (can obtain using pip)
 
 ## Usage:
 * Start rotctld (refer rotctld documentation)

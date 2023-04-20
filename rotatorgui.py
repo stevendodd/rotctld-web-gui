@@ -65,7 +65,7 @@ class ROTCTLD(object):
         """ Send a command to the connected rotctld instance,
             and return the return value.
         """
-        self.sock.sendall(command+'\n')
+        self.sock.sendall(bytes(command+'\n', 'utf-8'))
         try:
             return self.sock.recv(1024)
         except:
@@ -92,7 +92,7 @@ class ROTCTLD(object):
 
         command = "P %3.1f %2.1f" % (azimuth,elevation)
         response = self.send_command(command)
-        if "RPRT 0" in response:
+        if "RPRT 0" in response.decode("utf-8"):
             return True
         else:
             return False
@@ -105,7 +105,7 @@ class ROTCTLD(object):
 
         # Attempt to split response by \n (az and el are on separate lines)
         try:
-            response_split = response.split('\n')
+            response_split = response.decode("utf-8").split('\n')
             _current_azimuth = float(response_split[0])
             _current_elevation = float(response_split[1])
             return (_current_azimuth, _current_elevation)
